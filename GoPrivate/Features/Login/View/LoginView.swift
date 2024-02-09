@@ -26,32 +26,9 @@ struct LoginView: View {
                     .fontWeight(.regular)
             }
             VStack {
-                HStack {
-                    Image("email")
-                        .resizable()
-                        .frame(width: 25, height: 21)
-                    TextField("Email", text: $email)
-                        .fontWeight(.regular)
-                        .foregroundColor(Color.black.opacity(0.25))
-                }
-                .padding()
-                .foregroundColor(Color.Default.bluePrimaryGo)
-                .background(Color.black.opacity(0.04))
-                .cornerRadius(12)
-                
-                HStack {
-                    Image("password")
-                        .resizable()
-                        .frame(width: 20, height: 25)
-                    TextField("Password", text: $password)
-                        .fontWeight(.regular)
-                        .foregroundColor(Color.black.opacity(0.25))
-                }
-                .padding()
-                .foregroundColor(Color.Default.bluePrimaryGo)
-                .background(Color.black.opacity(0.04))
-                .cornerRadius(12)
-                .padding(.top, 17)
+                TextFieldComponent(text: $email, placeholder: "Email", icon: "email")
+                TextFieldComponent(text: $password, placeholder: "Password", icon: "password")
+                    .padding(.top, 17)
             }
             .padding(.top, 49)
             Spacer()
