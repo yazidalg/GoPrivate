@@ -26,23 +26,13 @@ struct LoginView: View {
                     .fontWeight(.regular)
             }
             VStack {
-                TextFieldComponent(text: $email, placeholder: "Email", icon: "email")
-                TextFieldComponent(text: $password, placeholder: "Password", icon: "password")
+                TextFieldComponent(text: $email, placeholder: "Email", icon: "email", isPassword: false)
+                TextFieldComponent(text: $password, placeholder: "Password", icon: "password", isPassword: true)
                     .padding(.top, 17)
             }
             .padding(.top, 49)
             Spacer()
-            Button {
-                
-            } label: {
-                Text("Login")
-                    .font(.system(size: 16))
-                    .fontWeight(.bold)
-                    .foregroundColor(.white)
-                    .frame(maxWidth: .infinity, maxHeight: 40)
-                    .background(Color.Default.greenPrimaryGo)
-                    .cornerRadius(12)
-            }
+            ButtonPrimary(text: "Login", bgColor: Color.Default.greenPrimaryGo, fontSize: 16, action: {})
             Spacer()
             HStack {
                 Text("Tidak punya akun?")

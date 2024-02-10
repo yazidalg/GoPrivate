@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct PickerFieldComponent: View {
+    
     let scope = ["SD", "SMP", "SMA", "Kuliah"]
     @State private var selection: String = "Jenjang"
+    
     var body: some View {
         HStack {
             Image("academic")

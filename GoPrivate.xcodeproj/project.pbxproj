@@ -17,12 +17,13 @@
 		8A27BFBD2B7290AE00967708 /* PickerFieldComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A27BFBC2B7290AE00967708 /* PickerFieldComponent.swift */; };
 		8A2ADF0F2B76A6C5005FF670 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 8A2ADF0E2B76A6C5005FF670 /* FirebaseAuth */; };
 		8A2ADF112B76A6C5005FF670 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 8A2ADF102B76A6C5005FF670 /* FirebaseFirestore */; };
+		8A2ADF152B76AAEC005FF670 /* ButtonPrimary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2ADF142B76AAEC005FF670 /* ButtonPrimary.swift */; };
 		8A68B0A52B6B85A300B45EF3 /* BoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A68B0A42B6B85A300B45EF3 /* BoardingView.swift */; };
 		8A68B0AA2B6B881C00B45EF3 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A68B0A92B6B881C00B45EF3 /* Image.swift */; };
 		8A68B0AC2B6B88CA00B45EF3 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A68B0AB2B6B88CA00B45EF3 /* Color.swift */; };
 		8A69920D2B6B9E3C00016A9C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A69920C2B6B9E3C00016A9C /* LoginView.swift */; };
 		8ADA89EB2B6DF0DB00AE887B /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADA89EA2B6DF0DB00AE887B /* RegisterView.swift */; };
-		8ADA89EE2B6DF1BE00AE887B /* TextFieldComponentextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADA89ED2B6DF1BE00AE887B /* TextFieldComponentextField.swift */; };
+		8ADA89EE2B6DF1BE00AE887B /* TextFieldComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADA89ED2B6DF1BE00AE887B /* TextFieldComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,12 +55,13 @@
 		8A235F3B2B6AA62200F1F6E7 /* GoPrivateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoPrivateUITests.swift; sourceTree = "<group>"; };
 		8A235F3D2B6AA62200F1F6E7 /* GoPrivateUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoPrivateUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8A27BFBC2B7290AE00967708 /* PickerFieldComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerFieldComponent.swift; sourceTree = "<group>"; };
+		8A2ADF142B76AAEC005FF670 /* ButtonPrimary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonPrimary.swift; sourceTree = "<group>"; };
 		8A68B0A42B6B85A300B45EF3 /* BoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardingView.swift; sourceTree = "<group>"; };
 		8A68B0A92B6B881C00B45EF3 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		8A68B0AB2B6B88CA00B45EF3 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		8A69920C2B6B9E3C00016A9C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		8ADA89EA2B6DF0DB00AE887B /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
-		8ADA89ED2B6DF1BE00AE887B /* TextFieldComponentextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldComponentextField.swift; sourceTree = "<group>"; };
+		8ADA89ED2B6DF1BE00AE887B /* TextFieldComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,6 +237,23 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		8A2ADF122B76AAA6005FF670 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				8A2ADF142B76AAEC005FF670 /* ButtonPrimary.swift */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
+		8A2ADF132B76AAD2005FF670 /* Field */ = {
+			isa = PBXGroup;
+			children = (
+				8ADA89ED2B6DF1BE00AE887B /* TextFieldComponent.swift */,
+				8A27BFBC2B7290AE00967708 /* PickerFieldComponent.swift */,
+			);
+			path = Field;
+			sourceTree = "<group>";
+		};
 		8A68B0A62B6B879200B45EF3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,8 +267,8 @@
 		8ADA89EC2B6DF1A500AE887B /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				8ADA89ED2B6DF1BE00AE887B /* TextFieldComponentextField.swift */,
-				8A27BFBC2B7290AE00967708 /* PickerFieldComponent.swift */,
+				8A2ADF132B76AAD2005FF670 /* Field */,
+				8A2ADF122B76AAA6005FF670 /* Button */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -404,7 +423,8 @@
 				8A69920D2B6B9E3C00016A9C /* LoginView.swift in Sources */,
 				8A27BFBD2B7290AE00967708 /* PickerFieldComponent.swift in Sources */,
 				8A68B0A52B6B85A300B45EF3 /* BoardingView.swift in Sources */,
-				8ADA89EE2B6DF1BE00AE887B /* TextFieldComponentextField.swift in Sources */,
+				8ADA89EE2B6DF1BE00AE887B /* TextFieldComponent.swift in Sources */,
+				8A2ADF152B76AAEC005FF670 /* ButtonPrimary.swift in Sources */,
 				8A68B0AA2B6B881C00B45EF3 /* Image.swift in Sources */,
 				8ADA89EB2B6DF0DB00AE887B /* RegisterView.swift in Sources */,
 				8A235F232B6AA5FF00F1F6E7 /* ContentView.swift in Sources */,

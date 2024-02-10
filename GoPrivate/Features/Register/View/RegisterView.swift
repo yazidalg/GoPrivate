@@ -33,31 +33,21 @@ struct SignUpView: View {
             }
             Spacer()
             VStack {
-                TextFieldComponent(text: $username, placeholder: "Nama Lengkap", icon: "person")
+                TextFieldComponent(text: $username, placeholder: "Nama Lengkap", icon: "person", isPassword: false)
                     .padding(.bottom, 10)
-                TextFieldComponent(text: $email, placeholder: "Email", icon: "email")
+                TextFieldComponent(text: $email, placeholder: "Email", icon: "email", isPassword: false)
                     .padding(.bottom, 10)
-                TextFieldComponent(text: $phoneNumber, placeholder: "Nomor Telepon", icon: "phone")
+                TextFieldComponent(text: $phoneNumber, placeholder: "Nomor Telepon", icon: "phone", isPassword: false)
                     .padding(.bottom, 10)
                 PickerFieldComponent()
                     .padding(.bottom, 10)
-                TextFieldComponent(text: $password, placeholder: "Password", icon: "password")
+                TextFieldComponent(text: $password, placeholder: "Password", icon: "password", isPassword: true)
                     .padding(.bottom, 10)
-                TextFieldComponent(text: $confirmPassword, placeholder: "Konfirmasi Password", icon: "password")
+                TextFieldComponent(text: $confirmPassword, placeholder: "Konfirmasi Password", icon: "password", isPassword: true)
                     .padding(.bottom, 10)
             }
             Spacer()
-            Button {
-                
-            } label: {
-                Text("Register")
-                    .font(.system(size: 16))
-                    .fontWeight(.bold)
-                    .foregroundColor(.white)
-                    .frame(maxWidth: .infinity, maxHeight: 40)
-                    .background(Color.Default.greenPrimaryGo)
-                    .cornerRadius(12)
-            }
+            ButtonPrimary(text: "Register", bgColor: Color.Default.greenPrimaryGo, fontSize: 16, action: {})
             Spacer()
             HStack {
                 Text("Sudah punya akun?")
