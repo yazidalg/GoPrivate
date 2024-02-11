@@ -9,14 +9,8 @@ import SwiftUI
 
 struct SignUpView: View {
     
-    @State private var username: String = ""
-    @State private var email: String = ""
-    @State private var phoneNumber: String = ""
-    @State private var password: String = ""
-    @State private var confirmPassword: String = ""
-    @State private var selection = ""
-    @Binding var role: String
-    let scope = ["SMA", "SMP", "SMK"]
+    @StateObject var viewModel = RegisterViewModel()
+    @ObservedObject var boardingViewModel = BoardingViewModel()
     
     var body: some View {
         NavigationStack {
@@ -27,7 +21,7 @@ struct SignUpView: View {
                     .bold()
                 Spacer()
                 VStack {
-                    Text("Nikmati akun baru sebagai \(role)")
+                    Text("Nikmati akun baru sebagai \(boardingViewModel.role)")
                         .font(.system(size: 18))
                         .fontWeight(.semibold)
                     Text("Nikmati beragam fitur GoPrivate")
@@ -35,17 +29,17 @@ struct SignUpView: View {
                 }
                 Spacer()
                 VStack {
-                    TextFieldComponent(text: $username, placeholder: "Nama Lengkap", icon: "person", isPassword: false)
+                    TextFieldComponent(text: $viewModel.username, placeholder: "Nama Lengkap", icon: "person", isPassword: false)
                         .padding(.bottom, 10)
-                    TextFieldComponent(text: $email, placeholder: "Email", icon: "email", isPassword: false)
+                    TextFieldComponent(text: $viewModel.email, placeholder: "Email", icon: "email", isPassword: false)
                         .padding(.bottom, 10)
-                    TextFieldComponent(text: $phoneNumber, placeholder: "Nomor Telepon", icon: "phone", isPassword: false)
+                    TextFieldComponent(text: $viewModel.phoneNumber, placeholder: "Nomor Telepon", icon: "phone", isPassword: false)
                         .padding(.bottom, 10)
                     PickerFieldComponent()
                         .padding(.bottom, 10)
-                    TextFieldComponent(text: $password, placeholder: "Password", icon: "password", isPassword: true)
+                    TextFieldComponent(text: $viewModel.password, placeholder: "Password", icon: "password", isPassword: true)
                         .padding(.bottom, 10)
-                    TextFieldComponent(text: $confirmPassword, placeholder: "Konfirmasi Password", icon: "password", isPassword: true)
+                    TextFieldComponent(text: $viewModel.confirmPassword, placeholder: "Konfirmasi Password", icon: "password", isPassword: true)
                         .padding(.bottom, 10)
                 }
                 Spacer()
@@ -72,6 +66,6 @@ struct SignUpView: View {
 
 struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
-        SignUpView(role: .constant("Guru"))
+        SignUpView()
     }
 }

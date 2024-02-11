@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BoardingView: View {
     
-    @State private var role: String = ""
+    @StateObject var viewModel = BoardingViewModel()
     
     var body: some View {
         NavigationStack {
@@ -28,8 +28,9 @@ struct BoardingView: View {
                 }
                 Spacer()
                 VStack {
-                    NavigationLink {
-                        SignUpView(role: .constant("Guru"))
+                    Button {
+                        viewModel.role = "Guru"
+                        viewModel.isNavigate = true
                     } label: {
                         HStack {
                             Spacer()
@@ -46,9 +47,11 @@ struct BoardingView: View {
                         .cornerRadius(10)
                         .padding(.horizontal, 25)
                     }
-                    .padding(.bottom, 5)
-                    NavigationLink {
-                        SignUpView(role: .constant("Murid"))
+                    
+                    .padding(.top, 10)
+                    Button {
+                        viewModel.role = "Murid"
+                        viewModel.isNavigate = true
                     } label: {
                         HStack {
                             Spacer()
@@ -65,7 +68,7 @@ struct BoardingView: View {
                         .cornerRadius(10)
                         .padding(.horizontal, 25)
                     }
-                    .padding(.top, 5)
+                    NavigationLink(destination: SignUpView(boardingViewModel: viewModel), isActive: $viewModel.isNavigate, label: { EmptyView() })
                 }
                 Spacer()
                 HStack {
