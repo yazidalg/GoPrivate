@@ -28,22 +28,30 @@ struct SignUpView: View {
                         .fontWeight(.regular)
                 }
                 Spacer()
-                VStack {
-                    TextFieldComponent(text: $viewModel.username, placeholder: "Nama Lengkap", icon: "person", isPassword: false)
-                        .padding(.bottom, 10)
-                    TextFieldComponent(text: $viewModel.email, placeholder: "Email", icon: "email", isPassword: false)
-                        .padding(.bottom, 10)
-                    TextFieldComponent(text: $viewModel.phoneNumber, placeholder: "Nomor Telepon", icon: "phone", isPassword: false)
-                        .padding(.bottom, 10)
-                    PickerFieldComponent()
-                        .padding(.bottom, 10)
-                    TextFieldComponent(text: $viewModel.password, placeholder: "Password", icon: "password", isPassword: true)
-                        .padding(.bottom, 10)
-                    TextFieldComponent(text: $viewModel.confirmPassword, placeholder: "Konfirmasi Password", icon: "password", isPassword: true)
-                        .padding(.bottom, 10)
+                Form {
+                    VStack {
+                        TextFieldComponent(text: $viewModel.username, placeholder: "Nama Lengkap", icon: "person", isPassword: false)
+                            .padding(.bottom, 10)
+                            .textInputAutocapitalization(.words)
+                        TextFieldComponent(text: $viewModel.email, placeholder: "Email", icon: "email", isPassword: false)
+                            .textInputAutocapitalization(.never)
+                            .padding(.bottom, 10)
+                        TextFieldComponent(text: $viewModel.phoneNumber, placeholder: "Nomor Telepon", icon: "phone", isPassword: false)
+                            .padding(.bottom, 10)
+                        PickerFieldComponent()
+                            .padding(.bottom, 10)
+                        TextFieldComponent(text: $viewModel.password, placeholder: "Password", icon: "password", isPassword: true)
+                            .padding(.bottom, 10)
+                        TextFieldComponent(text: $viewModel.confirmPassword, placeholder: "Konfirmasi Password", icon: "password", isPassword: true)
+                            .padding(.bottom, 10)
+                    }
                 }
+                .formStyle(ColumnsFormStyle())
                 Spacer()
-                ButtonPrimary(text: "Register", bgColor: Color.Default.greenPrimaryGo, fontSize: 16, action: {})
+                ButtonPrimary(text: "Register", bgColor: Color.Default.greenPrimaryGo, fontSize: 16, action: {
+                    viewModel.signUpUser()
+                })
+//                .disabled(viewModel.validateForm())
                 Spacer()
                 HStack {
                     Text("Sudah punya akun?")

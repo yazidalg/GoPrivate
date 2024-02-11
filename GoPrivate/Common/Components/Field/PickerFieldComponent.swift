@@ -17,14 +17,15 @@ struct PickerFieldComponent: View {
             Image("academic")
                 .resizable()
                 .frame(width: 30, height: 30)
-            Picker("Select", selection: $selection) {
+            Picker("",selection: $selection) {
                 ForEach (scope, id: \.self) {
                     Text($0)
                         .fontWeight(.regular)
+                        .foregroundColor(.black)
                 }
             }
+            .pickerStyle(.segmented)
             Spacer()
-            Image("arrowBottom")
         }
         .padding()
         .frame(maxWidth: .infinity)
@@ -32,5 +33,11 @@ struct PickerFieldComponent: View {
             RoundedRectangle(cornerRadius: 12)
                 .stroke(.black.opacity(0.15), lineWidth: 1.5)
         )
+    }
+}
+
+struct PickerFieldComponent_Previews: PreviewProvider {
+    static var previews: some View {
+        PickerFieldComponent()
     }
 }
